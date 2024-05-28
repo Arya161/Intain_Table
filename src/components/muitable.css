@@ -22,7 +22,6 @@
 }
 
 .table tr:hover{
-    background-color: rgb(213, 239, 232);
     cursor:pointer;
 }
 
