@@ -24,12 +24,30 @@ const AddTrancheModal = ({ open, handleClose, addNewEntry }) => {
       rate: formData.rate,
       act: "View/Edit Delete"
     };
-    addNewEntry(newEntry);
-    handleClose();
+
+    fetch('/add-tranche', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newEntry)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        addNewEntry(newEntry);
+        handleClose();
+      } else {
+        alert('Error adding tranche');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   };
 
   return (
-    <Dialog open={open} onClose={handleClose}  className="modal-container">
+    <Dialog open={open} onClose={handleClose} className="modal-container">
       <DialogTitle className="modal-title">Add Tranche</DialogTitle>
       <DialogContent className="modal-content">
         <p>Id</p>
@@ -39,7 +57,7 @@ const AddTrancheModal = ({ open, handleClose, addNewEntry }) => {
         <p>CUSIP</p>
         <TextField className="input-field" name="SIP" value={formData.SIP} onChange={handleInputChange} />
         <p>Original Principal Balance</p>
-        <TextField className="input-field" name="bal"  value={formData.bal} onChange={handleInputChange} />
+        <TextField className="input-field" name="bal" value={formData.bal} onChange={handleInputChange} />
         <p>Interest Rate</p>
         <TextField className="input-field" name="rate" value={formData.rate} onChange={handleInputChange} />
         <div className="button-container">
