@@ -1,0 +1,36 @@
+.table-container{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10vw;
+}
+
+.table-head{
+    background-color:rgb(183, 245, 232);
+    border-bottom: 0px;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.table tr:hover{
+    background-color: rgb(213, 239, 232);
+    cursor:pointer;
+}
+
+.table-cell {
+    padding: 4px 8px;
+    word-wrap: break-word;
+}
+
+#link{
+    color: rgb(24, 192, 229);
+}
