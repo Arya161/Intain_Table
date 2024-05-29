@@ -1,3 +1,4 @@
+
 import React, { useMemo,useState } from "react";
 import './muitable.css';
 import MOCK_DATA from './MOCK_DATA.json';
@@ -13,50 +14,45 @@ import { TableContainer,
          Paper,
          Button,
          Typography,
-    IconButton
+    IconButton,
+    TableSortLabel,
+    TablePagination
  } from '@mui/material';
  import { ArrowUpward, ArrowDownward } from '@mui/icons-material';
 
 
 export const Muitable = () => {
 
+  const [order, setOrder] = useState('asc');
+  const [orderBy, setOrderBy] = useState('rate');
   const [page, setPage] = useState(0);
-  const [sortOrder, setSortOrder] = useState('asc');
-  const [sortedData, setSortedData] = useState([]);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const tableData = useMemo(() => {
-    if (sortedData.length > 0) {
-        return sortedData;
+  const tableData = useMemo(() => MOCK_DATA, []);
+
+  const handleRequestSort = () => {
+    const isAsc = orderBy === 'rate' && order === 'asc';
+    setOrder(isAsc ? 'desc' : 'asc');
+  };
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  const sortedRows = [...tableData].sort((a, b) => {
+    const rateA = parseFloat(a.rate);
+    const rateB = parseFloat(b.rate);
+    if (order === 'asc') {
+      return rateA - rateB;
     } else {
-        return MOCK_DATA;
+      return rateB - rateA;
     }
-}, [sortedData]);
-
-  const handlePageChange = (pageNumber) => {
-    setPage(pageNumber);
-  };
-
-  const handleNextPage = () => {
-    setPage(page + 1);
-  };
-
-  const handlePrevPage = () => {
-    setPage(page - 1);
-  };
-
-
-  const handleSort = () => {
-    const newSortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-    setSortOrder(newSortOrder);
-    const sortedData = tableData.slice().sort((a, b) => {
-        if (newSortOrder === 'asc') {
-            return a.id - b.id;
-        } else {
-            return b.id - a.id;
-        }
-    });
-    setSortedData(sortedData);
-};
+  });
 
   return (
     <div className="table-container">
@@ -68,13 +64,21 @@ export const Muitable = () => {
                         <TableCell className="table-cell">Name</TableCell>
                         <TableCell className="table-cell">CUSIP</TableCell>
                         <TableCell className="table-cell">Original Principal Balance</TableCell>
-                        <TableCell className="table-cell">Interest Rate</TableCell>
+                        <TableCell className="table-cell">
+                        <TableSortLabel
+                active={orderBy === 'rate'}
+                direction={order}
+                onClick={handleRequestSort}
+              >
+                Interest Rate
+              </TableSortLabel>
+                        </TableCell>
                         <TableCell className="table-cell">Actions</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                {tableData.slice(page * 5, page * 5 + 5).map((row) => (
-              <TableRow key={row.id} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                {sortedRows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+            <TableRow key={row.id}>
                 <TableCell className="table-cell">{row.id}</TableCell>
                 <TableCell className="table-cell">{row.name}</TableCell>
                 <TableCell className="table-cell">{row.SIP}</TableCell>
@@ -87,12 +91,15 @@ export const Muitable = () => {
                     ))}
             </TableBody>
         </Table>
-        <Button onClick={handlePrevPage} disabled={page === 0}>
-          Previous
-        </Button>
-        <Button onClick={handleNextPage} disabled={page >= Math.ceil(tableData.length / 5) - 1}>
-          Next
-        </Button>
+        <TablePagination
+        rowsPerPageOptions={[5, 10, 25]}
+        component="div"
+        count={tableData.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
     </TableContainer>
     </div>
   )
