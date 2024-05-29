@@ -61,8 +61,8 @@ const AddTrancheModal = ({ open, handleClose, addNewEntry }) => {
         <p>Interest Rate</p>
         <TextField className="input-field" name="rate" value={formData.rate} onChange={handleInputChange} />
         <div className="button-container">
-          <Button onClick={handleClose} className="button">Cancel</Button>
-          <Button onClick={handleSubmit} className="button">Submit</Button>
+          <Button class = "btn1" onClick={handleClose} className="button">Cancel</Button>
+          <Button class = "btn2" onClick={handleSubmit} className="button">Add</Button>
         </div>
       </DialogContent>
     </Dialog>

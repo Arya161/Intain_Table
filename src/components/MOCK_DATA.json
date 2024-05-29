@@ -12,111 +12,129 @@
     "name": "Senior",
     "SIP": "861D1Y AAD",
     "bal": "$7,500,000.00",
-    "rate": "2.00%",
-    "act": "View/Edit Delete"
+    "rate": "2.00%"
   },
   {
     "id": 3,
     "name": "Senior",
     "SIP": "861D1Y AAD",
     "bal": "$7,500,000.00",
-    "rate": "1.00%",
-    "act": "View/Edit Delete"
+    "rate": "1.00%"
   },
   {
     "id": 4,
     "name": "Senior",
     "SIP": "861D1Y AAD",
     "bal": "$7,500,000.00",
-    "rate": "2.00%",
-    "act": "View/Edit Delete"
+    "rate": "2.00%"
   },
   {
     "id": 5,
     "name": "Senior",
     "SIP": "861D1Y AAD",
     "bal": "$7,500,000.00",
-    "rate": "2.00%",
-    "act": "View/Edit Delete"
+    "rate": "2.00%"
   },
   {
     "id": 6,
     "name": "Senior",
     "SIP": "861D1Y AAD",
     "bal": "$7,500,000.00",
-    "rate": "2.00%",
-    "act": "View/Edit Delete"
+    "rate": "2.00%"
   },
   {
     "id": 7,
     "name": "Senior",
     "SIP": "861D1Y AAD",
     "bal": "$7,500,000.00",
-    "rate": "4.00%",
-    "act": "View/Edit Delete"
+    "rate": "4.00%"
   },
   {
     "id": 8,
     "name": "Senior",
     "SIP": "861D1Y AAD",
     "bal": "$7,500,000.00",
-    "rate": "2.00%",
-    "act": "View/Edit Delete"
+    "rate": "2.00%"
   },
   {
     "id": 9,
     "name": "Senior",
     "SIP": "861D1Y AAD",
     "bal": "$7,500,000.00",
-    "rate": "2.00%",
-    "act": "View/Edit Delete"
+    "rate": "2.00%"
   },
   {
     "id": 4,
     "name": "Senior",
     "SIP": "861D1Y AAD",
     "bal": "$7,500,000.00",
-    "rate": "2.00%",
-    "act": "View/Edit Delete"
+    "rate": "2.00%"
   },
   {
     "id": "11",
     "name": "test",
     "SIP": "4355",
     "bal": "677777",
-    "rate": "3.00%",
-    "act": "View/Edit Delete"
+    "rate": "3.00%"
   },
   {
     "id": "11",
     "name": "test",
     "SIP": "4355",
     "bal": "677777",
-    "rate": "3",
-    "act": "View/Edit Delete"
+    "rate": "3"
   },
   {
     "id": "33",
     "name": "test",
     "SIP": "4355",
     "bal": "677777",
-    "rate": "3",
-    "act": "View/Edit Delete"
+    "rate": "3"
   },
   {
     "id": "2",
     "name": "test",
     "SIP": "4355",
     "bal": "677777",
-    "rate": "3.42%",
-    "act": "View/Edit Delete"
+    "rate": "3.42%"
   },
   {
     "id": "16",
     "name": "Arya Parolia",
     "SIP": "1612",
     "bal": "45000000",
-    "rate": "1.02%",
+    "rate": "1.02%"
+  },
+  {
+    "id": "99",
+    "name": "test5",
+    "SIP": "4355",
+    "bal": "677777",
+    "rate": "0.1",
+    "act": "View/Edit Delete"
+  },
+  {
+    "id": "",
+    "name": "",
+    "SIP": "",
+    "bal": "",
+    "rate": "",
+    "act": "View/Edit Delete"
+  },
+  {
+    "id": "15583660",
+    "name": "big",
+    "SIP": "4355",
+    "bal": "677777",
+    "rate": "90%",
+    "act": "View/Edit Delete"
+  },
+  {
+    "id": "99",
+    "name": "test60",
+    "SIP": "4355",
+    "bal": "677777",
+    "rate": "100%",
     "act": "View/Edit Delete"
   }
 ]

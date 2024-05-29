@@ -33,3 +33,13 @@
 #link{
     color: rgb(24, 192, 229);
 }
+
+.button {
+    margin-right: 5px;
+    background-color: #ffffff;
+    border-color: white;
+    color: rgb(21, 173, 244); 
+    padding: 8px 16px;
+    font-size: 15px;
+    cursor: pointer;
+  }

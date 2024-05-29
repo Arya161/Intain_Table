@@ -1,0 +1,15 @@
+.edit{
+    color: black;
+    background-color: white;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
+    width: 20vw;
+    padding: 20px;
+}
+
+.btn{
+    background-color: rgb(247, 172, 42);
+    border-radius: 500px;
+}

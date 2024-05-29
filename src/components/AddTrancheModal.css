@@ -30,9 +30,24 @@
   
   .button-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    margin-top: 10px;
   }
   
   .button {
     margin-left: 10px;
+  }
+
+  .btn2{
+    background-color: rgb(247, 172, 42);
+    border-radius: 500px;
+    font-size: 20px;
+  }
+
+  .btn1{
+    background-color: white;
+    border-color: white;
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgb(21, 173, 244);
   }
